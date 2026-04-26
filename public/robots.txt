@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://erdm.io/sitemap.xml
