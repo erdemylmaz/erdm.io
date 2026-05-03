@@ -382,6 +382,100 @@ export function ProjVisual({ k }: Props) {
       </div>
     );
 
+  if (k.startsWith("CLI")) {
+    const rows = [
+      { port: "3000", cmd: "node", path: "web-app", age: "27m", live: true },
+      { port: "3030", cmd: "node", path: "api", age: "29m", live: true },
+      { port: "8081", cmd: "node", path: "mobile", age: "14m", live: true },
+      { port: "5432", cmd: "ssh", path: "infra", age: "10d", live: false },
+      { port: "51606", cmd: "workerd", path: "edge-app", age: "9d2h", live: false },
+    ];
+    return (
+      <div
+        className="visual"
+        style={{
+          background: "linear-gradient(160deg, #1f1b17, #2a2520)",
+          color: "#e8e1d2",
+          padding: "26px 24px",
+          fontFamily: "var(--mono)",
+          fontSize: 11.5,
+          lineHeight: 1.65,
+          position: "relative",
+          overflow: "hidden",
+        }}
+      >
+        <div
+          style={{
+            position: "absolute",
+            inset: 0,
+            backgroundImage:
+              "repeating-linear-gradient(135deg, rgba(232,225,210,.04) 0 1px, transparent 1px 18px)",
+            pointerEvents: "none",
+          }}
+        />
+        <div
+          style={{
+            position: "relative",
+            display: "flex",
+            justifyContent: "space-between",
+            marginBottom: 14,
+            color: "rgba(232,225,210,.45)",
+            letterSpacing: ".14em",
+            textTransform: "uppercase",
+            fontSize: 10,
+          }}
+        >
+          <span>$ ports · listening</span>
+          <span style={{ color: "#b8966a" }}>v0.3.0</span>
+        </div>
+        <div style={{ position: "relative", display: "grid", gap: 6 }}>
+          {rows.map((r) => (
+            <div
+              key={r.port}
+              style={{
+                display: "grid",
+                gridTemplateColumns: "10px 64px 1fr auto",
+                alignItems: "center",
+                gap: 12,
+                padding: "6px 10px",
+                background: "rgba(232,225,210,.04)",
+                border: "1px solid rgba(232,225,210,.06)",
+                borderRadius: 4,
+              }}
+            >
+              <span
+                style={{
+                  width: 6,
+                  height: 6,
+                  borderRadius: 999,
+                  background: r.live ? "#b8966a" : "rgba(232,225,210,.28)",
+                  boxShadow: r.live ? "0 0 8px rgba(184,150,106,.55)" : "none",
+                }}
+              />
+              <span style={{ color: "#b8966a" }}>:{r.port}</span>
+              <span style={{ color: "rgba(232,225,210,.72)" }}>
+                {r.cmd}{" "}
+                <span style={{ color: "rgba(232,225,210,.42)" }}>· ~/code/{r.path}</span>
+              </span>
+              <span style={{ color: "rgba(232,225,210,.42)" }}>{r.age}</span>
+            </div>
+          ))}
+        </div>
+        <div
+          style={{
+            position: "relative",
+            marginTop: 14,
+            color: "rgba(232,225,210,.42)",
+            fontSize: 10,
+            letterSpacing: ".12em",
+          }}
+        >
+          $ ports kill --dir ~/code/web-app
+        </div>
+      </div>
+    );
+  }
+
   if (k.startsWith("GH"))
     return (
       <div
