@@ -6,13 +6,24 @@ import { Icon } from "../../components/Icon";
 type Props = { lang: Lang };
 type Line = { type: "cmd" | "out"; text: string };
 
+const PORTS_OUTPUT = [
+  "PORT   PROTO  PID    COMMAND  PARENT   PATH                  HOST       AGE",
+  "3000   TCP    15711  node     node     ~/code/web-app        0.0.0.0    27m",
+  "3030   TCP    12405  node     node     ~/code/api            0.0.0.0    29m",
+  "5432   TCP    23514  ssh      launchd  ~/code/infra          127.0.0.1  10d",
+  "51606  TCP    91160  workerd  launchd  ~/code/edge-app       127.0.0.1  9d",
+  "",
+  "4 listener(s) — github.com/erdemylmaz/ports-cli",
+].join("\n");
+
 const CMDS: Record<string, string> = {
-  help: "Available: whoami · about · ls · cat about.md · stack · contact · clear",
+  help: "Available: whoami · about · ls · cat about.md · stack · ports · contact · clear",
   whoami: "erdem.yılmaz — full-stack engineer, İzmir.",
   about: "Third year CS @ İYTE. Software engineer @ DevirVentures. Co-founder @ benzersor.",
-  ls: "projects/  about.md  resume.pdf  playground/",
+  ls: "projects/  about.md  resume.pdf  playground/  ports-cli/",
   "cat about.md": "Builds quiet systems. Studies database papers. Writes Java for fun.",
   stack: "TypeScript · NestJS · Postgres · Hetzner · AWS EC2/RDS · Cloudflare · Ansible",
+  ports: PORTS_OUTPUT,
   contact: "hi@erdm.io · github.com/erdemylmaz",
 };
 

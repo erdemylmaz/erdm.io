@@ -76,7 +76,7 @@ export type Playground = {
   eyebrow: string;
   h: string;
   lede: string;
-  radar: PgMod;
+  ports: PgMod;
   sql: PgMod;
   repl: PgMod;
   term: PgMod;

@@ -1210,97 +1210,48 @@ a.proj-card:hover h3 { color: var(--accent); }
 }
 .sql-error { color: #c9746d; }
 
-.radar {
-  height: 280px;
-  background:
-    radial-gradient(circle at center, rgba(184,150,106,.16), transparent 58%),
-    #181512;
-  border: 1px solid rgba(216,210,196,.1);
-  border-radius: 6px;
-  position: relative;
-  overflow: hidden;
+.ports-controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin: 4px 0 12px;
 }
-.radar::before {
-  content: "";
-  position: absolute;
-  inset: 14px;
-  border-radius: 50%;
-  border: 1px solid rgba(216,210,196,.12);
-}
-.radar-ring,
-.radar-cross,
-.radar-sweep,
-.radar-dot {
-  position: absolute;
-}
-.radar-ring {
-  left: 50%;
-  top: 50%;
-  border: 1px solid rgba(216,210,196,.1);
-  border-radius: 50%;
-  transform: translate(-50%, -50%);
-}
-.radar-ring.r1 { width: 48%; aspect-ratio: 1; }
-.radar-ring.r2 { width: 72%; aspect-ratio: 1; }
-.radar-cross.h { left: 8%; right: 8%; top: 50%; height: 1px; background: rgba(216,210,196,.09); }
-.radar-cross.v { top: 8%; bottom: 8%; left: 50%; width: 1px; background: rgba(216,210,196,.09); }
-.radar-sweep {
-  left: 50%;
-  top: 50%;
-  width: 42%;
-  height: 1px;
-  transform-origin: left center;
-  background: linear-gradient(90deg, var(--ochre), transparent);
-  animation: radarSweep 4.8s linear infinite;
-}
-.radar-dot {
-  width: 9px;
-  height: 9px;
-  border-radius: 999px;
-  background: rgba(216,210,196,.5);
-  transform: translate(-50%, -50%);
-  box-shadow: 0 0 12px rgba(216,210,196,.25);
-}
-.radar-dot.l2 { background: rgba(184,150,106,.85); box-shadow: 0 0 14px rgba(184,150,106,.35); }
-.radar-dot.l3 { background: var(--ochre); box-shadow: 0 0 20px rgba(184,150,106,.7); }
-.radar-dot b {
-  position: absolute;
-  left: 14px;
-  top: -5px;
-  font-family: var(--mono);
-  font-size: 9.5px;
-  font-weight: 400;
-  letter-spacing: .14em;
-  color: rgba(216,210,196,.65);
-}
-.radar-stats {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 14px;
-}
-.radar-stats div {
-  padding: 14px;
-  background: #181512;
+.ports-pill {
+  appearance: none;
+  border: 1px solid rgba(216,210,196,.14);
+  background: rgba(216,210,196,.06);
+  color: rgba(216,210,196,.72);
   border-radius: 4px;
-  border: 1px solid rgba(216,210,196,.1);
+  padding: 6px 10px;
+  font-family: var(--mono);
+  font-size: 10.5px;
+  letter-spacing: .04em;
+  cursor: pointer;
+  transition: color .15s, border-color .15s, background .15s;
 }
-.radar-stats b {
-  display: block;
-  font: 400 25px/1 var(--display);
+.ports-pill:hover { border-color: var(--ochre); color: var(--ochre); }
+.ports-pill.on {
+  border-color: var(--ochre);
+  background: rgba(184,150,106,.14);
   color: var(--ochre);
 }
-.radar-stats span {
-  display: block;
-  margin-top: 5px;
+.ports-out {
+  background: #0f0d0b;
+  border-radius: 6px;
+  padding: 14px 18px;
+  margin: 0 0 14px;
   font-family: var(--mono);
-  font-size: 10px;
-  letter-spacing: .14em;
-  text-transform: uppercase;
-  color: rgba(216,210,196,.5);
+  font-size: 12px;
+  line-height: 1.7;
+  color: #d8d2c4;
+  overflow-x: auto;
+  white-space: pre;
 }
-@keyframes radarSweep {
-  to { transform: rotate(360deg); }
+.ports-repo-link {
+  color: var(--ochre);
+  border-bottom: 1px solid rgba(184,150,106,.3);
 }
+.ports-repo-link:hover { border-bottom-color: var(--ochre); }
 
 .term {
   background: #0f0d0b;
@@ -1555,10 +1506,7 @@ a.proj-card:hover h3 { color: var(--accent); }
   .pg-mod h3 { font-size: 22px; }
   .repl { padding: 20px 14px; height: 200px; }
   .repl .node .box { width: 68px; height: 68px; font-size: 10px; }
-  .radar { height: 230px; }
-  .radar-stats { gap: 10px; }
-  .radar-stats div { padding: 12px; }
-  .radar-stats b { font-size: 22px; }
+  .ports-out { font-size: 11px; padding: 12px 14px; }
   .sql-lab { grid-template-columns: 1fr; }
   .sql-editor,
   .sql-result { min-height: 190px; }

@@ -112,7 +112,7 @@ export const CONTENT: Record<Lang, Content> = {
     proj: {
       eyebrow: "Selected projects",
       h: "Selected works",
-      meta: "Seven pieces · 2023 — present · scroll →",
+      meta: "Eight pieces · 2023 — present · scroll →",
       items: [
         {
           k: "PLT-01",
@@ -177,7 +177,16 @@ export const CONTENT: Record<Lang, Content> = {
           year: "'26",
         },
         {
-          k: "GH-08",
+          k: "CLI-08",
+          title: "ports",
+          host: "github.com/erdemylmaz/ports-cli · open source",
+          href: "https://github.com/erdemylmaz/ports-cli",
+          desc: "Project-aware lsof for macOS. Single-file Go CLI that shows which dev project each listening port belongs to, how long it has been running, who spawned it, and lets you kill, pause, or resume by port number.",
+          stack: ["Go", "macOS", "CLI", "MIT"],
+          year: "'26",
+        },
+        {
+          k: "GH-09",
           title: "And more →",
           host: "github.com/erdemylmaz",
           href: "https://github.com/erdemylmaz",
@@ -435,10 +444,10 @@ export const CONTENT: Record<Lang, Content> = {
       eyebrow: "Playground",
       h: "A small workshop. Switch modes.",
       lede: "The editorial site dims and the page becomes a tool. Each module is a thing I made for myself first; you're welcome to poke them.",
-      radar: {
-        title: "Systems radar",
-        desc: "A little scope for the things I keep watching: queues, APIs, deploys, mobile builds, and the awkward edges between them.",
-        foot: "Synthetic signal · tuned by production habits",
+      ports: {
+        title: "ports — project-aware lsof",
+        desc: "A small Go CLI I built for macOS. Shows which dev project each listening port belongs to, how long it has been running, and lets you kill, pause, or resume by port number. Try the sort modes.",
+        foot: "Single-file Go · MIT · v0.3.0 ·",
       },
       sql: {
         title: "Portfolio SQL",
@@ -589,7 +598,7 @@ export const CONTENT: Record<Lang, Content> = {
     proj: {
       eyebrow: "Seçilmiş işler",
       h: "Seçilmiş işler",
-      meta: "Yedi parça · 2023 — bugün · kaydır →",
+      meta: "Sekiz parça · 2023 — bugün · kaydır →",
       items: [
         {
           k: "PLT-01",
@@ -654,7 +663,16 @@ export const CONTENT: Record<Lang, Content> = {
           year: "'26",
         },
         {
-          k: "GH-08",
+          k: "CLI-08",
+          title: "ports",
+          host: "github.com/erdemylmaz/ports-cli · açık kaynak",
+          href: "https://github.com/erdemylmaz/ports-cli",
+          desc: "macOS için proje farkındalıklı lsof. Tek dosyalık Go CLI; hangi dev projenin hangi portu dinlediğini, ne kadar süredir çalıştığını, kimin başlattığını gösterir; port numarasıyla kill, pause, resume yapmanı sağlar.",
+          stack: ["Go", "macOS", "CLI", "MIT"],
+          year: "'26",
+        },
+        {
+          k: "GH-09",
           title: "Daha fazlası →",
           host: "github.com/erdemylmaz",
           href: "https://github.com/erdemylmaz",
@@ -913,10 +931,10 @@ export const CONTENT: Record<Lang, Content> = {
       h: "Küçük bir atölye. Mod değiştir.",
       lede:
         "Editöryal site sönümleniyor ve sayfa bir alete dönüşüyor. Her modül önce kendim için yaptığım bir şey; siz de oynayabilirsiniz.",
-      radar: {
-        title: "Sistem radarı",
-        desc: "Kuyruklar, API'lar, deploy'lar, mobil build'ler ve aralarındaki tuhaf kenarlar için küçük bir dürbün.",
-        foot: "Sentetik sinyal · üretim alışkanlıklarıyla ayarlı",
+      ports: {
+        title: "ports — proje farkındalıklı lsof",
+        desc: "macOS için yazdığım küçük bir Go CLI. Hangi dev projenin hangi portu dinlediğini, ne kadar süredir çalıştığını gösterir; port numarasıyla kill, pause, resume yapmana izin verir. Sıralama modlarını dene.",
+        foot: "Tek dosyalık Go · MIT · v0.3.0 ·",
       },
       sql: {
         title: "Portfolyo SQL",
