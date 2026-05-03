@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import type { Lang } from "./lib/types";
+import { useRoute } from "./lib/router";
 import { useLenis, getLenis } from "./hooks/useLenis";
 import { useActiveSection } from "./hooks/useActiveSection";
 import { useReveal } from "./hooks/useReveal";
@@ -15,6 +16,7 @@ import { Education } from "./sections/Education";
 import { Playground } from "./sections/playground/Playground";
 import { Writing } from "./sections/Writing";
 import { Footer } from "./sections/Footer";
+import { PostPage } from "./pages/PostPage";
 
 const ACCENT = "#6e7a8a"; // slate
 
@@ -42,10 +44,7 @@ function getInitialLang(): Lang {
 
 export default function App() {
   const [lang, setLangState] = useState<Lang>(getInitialLang);
-
-  useLenis(true);
-  const active = useActiveSection(SECTION_IDS, [lang]);
-  useReveal([lang]);
+  const route = useRoute();
 
   const setLang = (v: Lang) => {
     setLangState(v);
@@ -58,6 +57,18 @@ export default function App() {
   useEffect(() => {
     document.documentElement.lang = lang;
   }, [lang]);
+
+  if (route.kind === "post") {
+    return <PostPage slug={route.slug} lang={lang} setLang={setLang} />;
+  }
+
+  return <Home lang={lang} setLang={setLang} />;
+}
+
+function Home({ lang, setLang }: { lang: Lang; setLang: (l: Lang) => void }) {
+  useLenis(true);
+  const active = useActiveSection(SECTION_IDS, [lang]);
+  useReveal([lang]);
 
   // ~ key opens playground
   useEffect(() => {

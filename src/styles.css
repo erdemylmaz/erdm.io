@@ -230,6 +230,106 @@ body.has-custom-cursor [data-cursor] { cursor: pointer !important; }
 }
 .lang button.on { color: var(--ink); background: rgba(34,33,29,.08); }
 
+/* ───── post page chrome ───── */
+.post-topbar {
+  position: sticky;
+  top: 0;
+  z-index: 60;
+  background: rgba(238,233,221,.92);
+  backdrop-filter: saturate(140%) blur(8px);
+  border-bottom: 1px solid var(--rule);
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  padding: calc(14px + var(--safe-top)) clamp(20px, 4vw, 48px) 14px;
+}
+.post-topbar .brand { justify-self: start; }
+.post-topbar .lang { justify-self: end; }
+.post-topbar-back {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  padding: 6px 10px;
+  border-radius: 4px;
+  transition: color .15s, background .15s;
+}
+.post-topbar-back:hover { color: var(--ochre); background: rgba(184,150,106,.08); }
+
+.post-page {
+  max-width: 740px;
+  margin: 0 auto;
+  padding: 80px clamp(20px, 4vw, 48px) 120px;
+}
+.post-page-meta {
+  font-family: var(--mono);
+  font-size: 11px;
+  color: var(--ink-soft);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+  margin-bottom: 18px;
+}
+.post-page-meta a { color: var(--ochre); }
+.post-page-meta a:hover { border-bottom: 1px solid var(--ochre); }
+.post-page-tag {
+  font-weight: 500;
+  padding: 4px 8px;
+  background: rgba(184,150,106,.12);
+  color: var(--ochre);
+  border-radius: 3px;
+  letter-spacing: .14em;
+}
+.post-page-title {
+  font: 400 clamp(38px, 6vw, 64px)/1.06 var(--display);
+  letter-spacing: -.018em;
+  color: var(--ink);
+  margin: 0 0 16px;
+}
+.post-page-sub {
+  font: italic 22px/1.45 var(--display);
+  color: var(--ink-soft);
+  margin: 0 0 24px;
+  max-width: 620px;
+}
+.post-page-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  font-family: var(--mono);
+  font-size: 10.5px;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+}
+.post-page-tags span {
+  padding: 4px 8px;
+  background: rgba(34,33,29,.05);
+  border-radius: 3px;
+}
+.post-page-divider {
+  height: 1px;
+  background: var(--rule);
+  margin: 36px 0 36px;
+}
+.post-404 {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  padding-top: 140px;
+}
+.post-404 h1 { font: italic 48px/1.1 var(--display); color: var(--ink); margin: 0; }
+.post-404 p { font-size: 16px; color: var(--ink-soft); }
+
+/* the inline <article class="post"> from PortsCliPost no longer needs its
+   own header (PostPage renders the chrome) — hide its internal head. */
+.post-page .post { margin: 0; max-width: none; padding: 0; }
+.post-page .post .post-head { display: none; }
+
 /* ───── section scaffolding ───── */
 section {
   position: relative;
