@@ -135,8 +135,8 @@ export const CONTENT: Record<Lang, Content> = {
         {
           k: "CLI-03",
           title: "ports",
-          host: "github.com/erdemylmaz/ports-cli · open source",
-          href: "https://github.com/erdemylmaz/ports-cli",
+          host: "portscli.com · open source",
+          href: "https://portscli.com",
           desc: "Project-aware lsof for macOS. Single-file Go CLI that shows which dev project each listening port belongs to, how long it has been running, who spawned it, and lets you kill, pause, or resume by port number.",
           stack: ["Go", "macOS", "CLI", "MIT"],
           year: "'26",
@@ -624,8 +624,8 @@ export const CONTENT: Record<Lang, Content> = {
         {
           k: "CLI-03",
           title: "ports",
-          host: "github.com/erdemylmaz/ports-cli · açık kaynak",
-          href: "https://github.com/erdemylmaz/ports-cli",
+          host: "portscli.com · açık kaynak",
+          href: "https://portscli.com",
           desc: "macOS için proje farkındalıklı lsof. Tek dosyalık Go CLI; hangi dev projenin hangi portu dinlediğini, ne kadar süredir çalıştığını, kimin başlattığını gösterir; port numarasıyla kill, pause, resume yapmanı sağlar.",
           stack: ["Go", "macOS", "CLI", "MIT"],
           year: "'26",

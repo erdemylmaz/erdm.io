@@ -92,12 +92,12 @@ export function PortsCli({ lang }: Props) {
       <div className="pg-foot">
         {t.foot}{" "}
         <a
-          href="https://github.com/erdemylmaz/ports-cli"
+          href="https://portscli.com"
           target="_blank"
           rel="noreferrer noopener"
           className="ports-repo-link"
         >
-          github.com/erdemylmaz/ports-cli ↗
+          portscli.com ↗
         </a>
       </div>
     </div>
