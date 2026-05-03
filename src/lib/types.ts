@@ -88,6 +88,9 @@ export type Writing = {
   empty: string;
   emptyDesc: string;
   cta: string;
+  postsLabel: string;
+  readMore: string;
+  minRead: string;
 };
 
 export type Contact = {

@@ -472,6 +472,9 @@ export const CONTENT: Record<Lang, Content> = {
       emptyDesc:
         "I'd rather have nothing here than have stale opinions about clean code. The first piece will land when I have something worth saying — probably about why flexible code matters more than clever code, why testing pays its rent in production, Postgres replication, and the messier side of MCP.",
       cta: "Notify me",
+      postsLabel: "First post",
+      readMore: "Read full post",
+      minRead: "min read",
     },
     contact: {
       bigTop: "Working on something",
@@ -959,6 +962,9 @@ export const CONTENT: Record<Lang, Content> = {
       emptyDesc:
         "Burada bayat 'temiz kod' fikirleri yerine hiçbir şey olmasını tercih ederim. İlk yazı söyleyecek bir şeyim olduğunda gelir — büyük ihtimalle esnek kodun zekice koddan neden daha değerli olduğuna, testin üretimde kirasını nasıl ödediğine, Postgres replikasyonuna ve MCP'nin dağınık tarafına dair.",
       cta: "Çıkınca haber ver",
+      postsLabel: "İlk yazı",
+      readMore: "Tüm yazıyı oku",
+      minRead: "dk okuma",
     },
     contact: {
       bigTop: "Bilmem gereken",
