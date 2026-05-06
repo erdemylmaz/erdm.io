@@ -58,6 +58,16 @@ export default function App() {
     document.documentElement.lang = lang;
   }, [lang]);
 
+  useEffect(() => {
+    const gtag = (window as unknown as { gtag?: (...args: unknown[]) => void }).gtag;
+    if (!gtag) return;
+    gtag("event", "page_view", {
+      page_path: window.location.pathname + window.location.search,
+      page_location: window.location.href,
+      page_title: document.title,
+    });
+  }, [route]);
+
   if (route.kind === "post") {
     return <PostPage slug={route.slug} lang={lang} setLang={setLang} />;
   }
